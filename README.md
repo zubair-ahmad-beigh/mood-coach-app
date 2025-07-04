@@ -1,92 +1,86 @@
-# 🎧 Mood Coach
-
+# 🎧 Mood Coach  
 **Your AI companion for emotional well-being.**
 
-Mood Coach is a lightweight, intelligent web app that helps users reflect on their current mood through the context of their favorite music. It generates positive affirmations, emotional reflections, or mental health tips using advanced AI models.
+Mood Coach is a lightweight, intelligent web app that helps users reflect on their current mood through the context of their favorite music. It generates **positive affirmations**, **emotional reflections**, or **mental health tips** using advanced AI models.
 
 ---
 
 ## 💡 Concept & Objective
 
-This project is built as part of the MoodScale Software Developer Internship assignment. The aim is to blend **music**, **mood**, and **mental health** in a unique and meaningful way using AI.
+This project is built as part of the **MoodScale Software Developer Internship assignment**. The aim is to blend **music**, **mood**, and **mental health** in a unique and meaningful way using AI.
 
 Mood Coach uses your:
-- 🌟 Current Mood (e.g., happy, anxious, calm)
-- 🎵 Favorite Song (title or lyrics)
+- 🌟 **Current Mood** (e.g., happy, anxious, calm)
+- 🎵 **Favorite Song** (title or lyrics)
 
-...to generate supportive messages based on your input. Powered by **Groq's ultra-fast LLaMA 3 model**, it provides real-time emotional feedback to support your mental well-being.
+...to generate supportive and uplifting messages.  
+It is powered by **Groq's ultra-fast LLaMA 3 model**, providing real-time emotional feedback to support your mental well-being.
 
 ---
 
 ## 🚀 Features
 
-- 🧠 **LLaMA 3 AI via Groq API** for lightning-fast generation
-- 🎧 Mood + Song input form
-- ✨ Streamlit-based user interface
-- 🔄 Choose between:
-  - Affirmation
-  - Reflection
-  - Mental Health Tip
-- 🔐 Secure API key via `.env` (not pushed)
+- 🧠 LLaMA 3 AI via **Groq API** for lightning-fast generation  
+- 🎧 Mood + Song input form  
+- ✨ Streamlit-based user interface  
+- 🔄 Choose between:  
+  - Affirmation  
+  - Reflection  
+  - Mental Health Tip  
+- 🔐 Secure API key using `.env` (excluded via `.gitignore`)
 
 ---
 
 ## 🔧 Tech Stack
 
-| Component | Tech |
-|----------|------|
-| Frontend UI | Streamlit |
-| AI Model | LLaMA3 (via Groq API) |
-| Language | Python |
-| Secrets Management | `.env` file with `.gitignore` |
-| Hosting (optional) | Streamlit Cloud / Localhost |
+| Component          | Tech                  |
+|--------------------|-----------------------|
+| Frontend UI        | Streamlit             |
+| AI Model           | LLaMA3 (via Groq API) |
+| Language           | Python                |
+| Secrets Management | `.env` + `.gitignore` |
+| Hosting (Optional) | Streamlit Cloud / Localhost |
 
 ---
 
-## 🖥️ How to Run Locally
+## 🛠️ Setup & Run Instructions
 
-1. **Clone the repo**
-   ```bash
-   git clone https://github.com/zubair-ahmad-beigh/mood-coach-app.git
-   cd mood-coach-app
-Create a virtual environment
+Follow these simple steps to get the app running:
 
-bash
-Copy
-Edit
+```bash
+# 1. Clone the repository
+git clone https://github.com/zubair-ahmad-beigh/mood-coach-app.git
+cd mood-coach-app
+
+# 2. Create and activate a virtual environment
 python -m venv .venv
-.venv\Scripts\activate      # Windows
-source .venv/bin/activate   # Mac/Linux
-Install dependencies
 
-bash
-Copy
-Edit
+# For Windows
+.venv\Scripts\activate
+
+# For Mac/Linux
+source .venv/bin/activate
+
+# 3. Install dependencies
 pip install -r requirements.txt
-Set your Groq API Key
 
-Create a .env file and add:
+# 4. Create a .env file and add your Groq API key
+echo GROQ_API_KEY=your_groq_api_key_here > .env
 
-env
-Copy
-Edit
-GROQ_API_KEY=your_groq_api_key_here
-Run the app
-
-bash
-Copy
-Edit
+# 5. Run the Streamlit app
 streamlit run app.py
+⚠️ Note: .env is already listed in .gitignore, so your API key will stay secure and not be pushed to GitHub.
+
 🔍 How It Works
-User selects a mood and song title.
+You select a mood and type in a favorite song.
 
-Chooses a response type: affirmation / reflection / mental health tip.
+Choose a message type: Affirmation, Reflection, or Mental Health Tip
 
-App creates a dynamic prompt and sends it to Groq's LLaMA3 model.
+The app dynamically creates a prompt using your inputs.
 
-AI returns a thoughtful response instantly.
+The prompt is sent to Groq’s LLaMA3 model.
 
-Displayed on a clean, engaging Streamlit UI.
+You instantly receive a thoughtful response in the Streamlit UI.
 
 🧪 Example Prompt Sent to LLaMA3
 text
@@ -94,38 +88,36 @@ Copy
 Edit
 Mood: Anxious  
 Song: Let It Be - The Beatles  
-Type: Mental Health Tip
+Type: Mental Health Tip  
 
 Prompt:
 Based on the song and the mood, generate a thoughtful mental health tip to comfort the user.
 🌱 Future Improvements
-🎶 Spotify API Integration (fetch user’s real-time song)
+🎶 Spotify API Integration to fetch real-time song info
 
-📊 Emotional heatmaps or journaling charts
+📊 Emotional heatmaps or journaling visualizations
 
-🔄 Save history of responses
+🧠 Sentiment detection from lyrics
 
-🧠 Sentiment detection via lyrics
+🔄 Save user history for reflection tracking
 
-🌐 Deploy to Streamlit Cloud / HuggingFace Spaces
+🌐 Deploy on Streamlit Cloud or Hugging Face Spaces
 
 📁 Folder Structure
 bash
 Copy
 Edit
 mood-coach-app/
-├── app.py              # Main Streamlit App
-├── .env                # API Key (excluded from Git)
-├── .gitignore          # Ignores .env and cache files
-├── README.md           # You are here!
-├── requirements.txt    # Dependencies
-├── prompt.txt          # Template prompt format
+├── app.py            # Main Streamlit app
+├── .env              # API Key (excluded from Git)
+├── .gitignore        # Git ignore rules
+├── README.md         # This file
+├── requirements.txt  # Python dependencies
+├── prompt.txt        # Optional template for prompt
 🔐 Security Best Practices
-.env file is excluded from Git using .gitignore
-
-Groq API Key is securely loaded at runtime
-
-No secrets or keys are pushed to GitHub
+✅ .env is listed in .gitignore and not committed
+✅ API key is securely loaded using os.getenv()
+✅ No keys or secrets are exposed in the codebase
 
 🧠 Credits
 Built with ❤️ by Zubair Ahmad Beigh
@@ -136,4 +128,5 @@ Groq LLaMA3 API
 Streamlit
 
 📌 License
-This project is submitted as part of the MoodScale Internship selection. Feel free to explore the repo and contribute ideas.
+This project is submitted as part of the MoodScale Internship selection.
+Feel free to explore and extend the ideas.
