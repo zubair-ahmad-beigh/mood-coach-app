@@ -38,7 +38,7 @@ It is powered by **Groq's ultra-fast LLaMA 3 model**, providing real-time emotio
 | Secrets Management | `.env` + `.gitignore` |
 | Hosting (Optional) | Streamlit Cloud / Localhost |
 
---
+---
 
 ## 🛠️ Setup & Run Instructions
 Follow these simple steps to get the app running:
@@ -63,7 +63,7 @@ echo GROQ_API_KEY=your_groq_api_key_here > .env
 # 5. Run the Streamlit app
 streamlit run app.py
 ⚠️ Note: .env is already listed in .gitignore, so your API key will stay secure and not be pushed to GitHub.
-
+---
 ##🔍 How It Works
 1. User selects a mood and types a song title  
 2. Chooses a message type:
@@ -73,18 +73,21 @@ streamlit run app.py
 3. The app dynamically creates a prompt using the input  
 4. The prompt is sent to Groq’s LLaMA3 model  
 5. A thoughtful response is generated and shown in the Streamlit UI
+---
 ##🧪 Example Prompt Sent to LLaMA3
 Mood: Anxious  
 Song: Let It Be - The Beatles  
 Type: Mental Health Tip  
 Prompt:
 Based on the song and the mood, generate a thoughtful mental health tip to comfort the user.
+---
 ##🌱 Future Improvements
 🎶 Spotify API Integration to fetch real-time song info  
 📊 Emotional heatmaps or journaling visualizations  
 🧠 Sentiment detection from lyrics  
 🔄 Save user history for reflection tracking  
 🌐 Deploy on Streamlit Cloud or Hugging Face Spaces
+---
 ##📁 Folder Structure
 mood-coach-app/
 ├── app.py            # Main Streamlit app
@@ -93,15 +96,19 @@ mood-coach-app/
 ├── README.md         # This file
 ├── requirements.txt  # Python dependencies
 ├── prompt.txt        # Optional template for prompt
+---
 ##🔐 Security Best Practices
 ✅ .env is listed in .gitignore and not committed  
 ✅ API key is securely loaded using os.getenv()  
 ✅ No keys or secrets are exposed in the codebase
+---
 ##🧠 Credits
 Built with ❤️ by Zubair Ahmad Beigh  
 Powered by:
 - Groq LLaMA3 API  
 - Streamlit
+---
 ##📌 License
 This project is submitted as part of the MoodScale Internship selection.
 Feel free to explore and extend the ideas.
+---
